@@ -1,8 +1,8 @@
 {
-    "name": "yabhq/laravel-cart",
+    "name": "abdulkadirbak/laravel-cart",
     "description": "Simple yet customizable Laravel shopping cart",
     "keywords": ["laravel", "cart", "shopping", "shopping cart"],
-    "homepage": "https://github.com/yabhq/laravel-cart",
+    "homepage": "https://github.com/abdulkadirbak/laravel-cart",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -13,6 +13,10 @@
         {
             "name": "Chris",
             "email": "chris@chrisblackwell.me"
+        },
+        {
+            "name": "Abdulkadir Bak",
+            "email": "kadir.532@gmail.com"
         }
     ],
     "require": {
@@ -27,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Yab\\ShoppingCart\\": "src"
+            "AbdulkadirBak\\LaravelCart\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Yab\\ShoppingCart\\Tests\\": "tests",
+            "AbdulkadirBak\\LaravelCart\\Tests\\": "tests",
             "App\\Http\\Controllers\\Checkout\\": "src/Http/Controllers/Published"
         }
     },
@@ -48,7 +52,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Yab\\ShoppingCart\\ShoppingCartServiceProvider"
+                "AbdulkadirBak\\LaravelCart\\ShoppingCartServiceProvider"
             ]
         }
     }
