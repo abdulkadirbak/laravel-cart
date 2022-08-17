@@ -1,11 +1,11 @@
 <?php
 
-namespace Yab\ShoppingCart\Models;
+namespace AbdulkadirBak\LaravelCart\Models;
 
 use Yab\Mint\Casts\Money;
 use Yab\Mint\Traits\UuidModel;
-use Yab\ShoppingCart\Checkout;
-use Yab\ShoppingCart\Models\CartItem;
+use AbdulkadirBak\LaravelCart\Checkout;
+use AbdulkadirBak\LaravelCart\Models\CartItem;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -80,7 +80,7 @@ class Cart extends Model
      *
      * @param mixed $purchaseable
      *
-     * @return \Yab\ShoppingCart\Models\CartItem
+     * @return \AbdulkadirBak\LaravelCart\Models\CartItem
      */
     public function getItem(mixed $purchaseable) : CartItem
     {
@@ -96,7 +96,7 @@ class Cart extends Model
      * @param string $key
      * @param mixed $payload
      *
-     * @return \Yab\ShoppingCart\Models\Cart
+     * @return \AbdulkadirBak\LaravelCart\Models\Cart
      */
     public function setCustomField(string $key, mixed $payload) : Cart
     {

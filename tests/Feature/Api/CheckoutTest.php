@@ -1,12 +1,12 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Feature\Api;
+namespace AbdulkadirBak\LaravelCart\Tests\Feature\Api;
 
-use Yab\ShoppingCart\Checkout;
-use Yab\ShoppingCart\Models\Cart;
-use Yab\ShoppingCart\Tests\TestCase;
-use Yab\ShoppingCart\Models\CartItem;
-use Yab\ShoppingCart\Tests\Models\Product;
+use AbdulkadirBak\LaravelCart\Checkout;
+use AbdulkadirBak\LaravelCart\Models\Cart;
+use AbdulkadirBak\LaravelCart\Tests\TestCase;
+use AbdulkadirBak\LaravelCart\Models\CartItem;
+use AbdulkadirBak\LaravelCart\Tests\Models\Product;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CheckoutTest extends TestCase
@@ -17,7 +17,7 @@ class CheckoutTest extends TestCase
     public function a_new_checkout_can_be_created_via_the_api()
     {
         $response = $this->post(route('checkout.store'));
-    
+
         $response->assertSuccessful();
 
         $cart = Cart::firstOrFail();
@@ -45,7 +45,7 @@ class CheckoutTest extends TestCase
         ]);
 
         $response = $this->get(route('checkout.show', [ $item->cart->id ]));
-    
+
         $response->assertSuccessful();
 
         $response->assertJson([
@@ -65,7 +65,7 @@ class CheckoutTest extends TestCase
     public function a_non_existent_checkout_returns_a_404_not_found_response()
     {
         $response = $this->get(route('checkout.show', [ 'invalid-uuid' ]));
-    
+
         $response->assertNotFound();
 
         $response->assertJson([
@@ -92,7 +92,7 @@ class CheckoutTest extends TestCase
                 'billing_address' => [],
             ],
         ]);
-    
+
         $response->assertSuccessful();
 
         $this->assertDatabaseHas('carts', [
@@ -111,7 +111,7 @@ class CheckoutTest extends TestCase
         $cart = factory(Cart::class)->create();
 
         $response = $this->delete(route('checkout.destroy', [ $cart->id ]));
-    
+
         $response->assertSuccessful();
 
         $this->assertSoftDeleted('carts', [
@@ -135,7 +135,7 @@ class CheckoutTest extends TestCase
         $response = $this->post(route('checkout.discount', [ $cart->id ]), [
             'code' => '50OFF'
         ]);
-    
+
         $response->assertSuccessful();
 
         $this->assertDatabaseHas('carts', [

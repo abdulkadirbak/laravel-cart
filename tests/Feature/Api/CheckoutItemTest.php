@@ -1,11 +1,11 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Feature\Api;
+namespace AbdulkadirBak\LaravelCart\Tests\Feature\Api;
 
-use Yab\ShoppingCart\Models\Cart;
-use Yab\ShoppingCart\Tests\TestCase;
-use Yab\ShoppingCart\Models\CartItem;
-use Yab\ShoppingCart\Tests\Models\Product;
+use AbdulkadirBak\LaravelCart\Models\Cart;
+use AbdulkadirBak\LaravelCart\Tests\TestCase;
+use AbdulkadirBak\LaravelCart\Models\CartItem;
+use AbdulkadirBak\LaravelCart\Tests\Models\Product;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CheckoutItemTest extends TestCase
@@ -20,14 +20,14 @@ class CheckoutItemTest extends TestCase
         ]);
 
         $cart = factory(Cart::class)->create();
-        
+
         $response = $this->post(route('checkout.items.store', [ $cart->id ]), [
             'purchaseable_id' => $product->id,
             'purchaseable_type' => $product->getMorphClass(),
             'qty' => 1,
             'options' => [ 'color' => 'green' ],
         ]);
-    
+
         $response->assertSuccessful();
 
         $this->assertDatabaseHas('cart_items', [

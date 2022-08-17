@@ -1,24 +1,24 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Feature;
+namespace AbdulkadirBak\LaravelCart\Tests\Feature;
 
-use Yab\ShoppingCart\Checkout;
-use Yab\ShoppingCart\Models\Cart;
-use Yab\ShoppingCart\Tests\TestCase;
+use AbdulkadirBak\LaravelCart\Checkout;
+use AbdulkadirBak\LaravelCart\Models\Cart;
+use AbdulkadirBak\LaravelCart\Tests\TestCase;
 use Illuminate\Support\Facades\Event;
-use Yab\ShoppingCart\Models\CartItem;
+use AbdulkadirBak\LaravelCart\Models\CartItem;
 use Illuminate\Database\Eloquent\Builder;
-use Yab\ShoppingCart\Events\CartItemAdded;
-use Yab\ShoppingCart\Tests\Models\Product;
-use Yab\ShoppingCart\Tests\Models\Customer;
-use Yab\ShoppingCart\Events\CartItemDeleted;
-use Yab\ShoppingCart\Events\CartItemUpdated;
-use Yab\ShoppingCart\Tests\Models\NonPurchaser;
+use AbdulkadirBak\LaravelCart\Events\CartItemAdded;
+use AbdulkadirBak\LaravelCart\Tests\Models\Product;
+use AbdulkadirBak\LaravelCart\Tests\Models\Customer;
+use AbdulkadirBak\LaravelCart\Events\CartItemDeleted;
+use AbdulkadirBak\LaravelCart\Events\CartItemUpdated;
+use AbdulkadirBak\LaravelCart\Tests\Models\NonPurchaser;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Yab\ShoppingCart\Tests\Models\NonPurchaseable;
-use Yab\ShoppingCart\Exceptions\CheckoutNotFoundException;
-use Yab\ShoppingCart\Exceptions\PurchaserInvalidException;
-use Yab\ShoppingCart\Exceptions\ItemNotPurchaseableException;
+use AbdulkadirBak\LaravelCart\Tests\Models\NonPurchaseable;
+use AbdulkadirBak\LaravelCart\Exceptions\CheckoutNotFoundException;
+use AbdulkadirBak\LaravelCart\Exceptions\PurchaserInvalidException;
+use AbdulkadirBak\LaravelCart\Exceptions\ItemNotPurchaseableException;
 
 class CheckoutTest extends TestCase
 {
@@ -103,7 +103,7 @@ class CheckoutTest extends TestCase
         Event::fake([
             CartItemAdded::class
         ]);
-        
+
         $checkout = Checkout::create();
 
         $product = factory(Product::class)->create([
@@ -236,7 +236,7 @@ class CheckoutTest extends TestCase
         Event::fake([
             CartItemDeleted::class
         ]);
-        
+
         $item = factory(CartItem::class)->create();
 
         $this->assertDatabaseHas('cart_items', [

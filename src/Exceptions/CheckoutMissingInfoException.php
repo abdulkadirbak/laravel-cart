@@ -1,6 +1,6 @@
 <?php
 
-namespace Yab\ShoppingCart\Exceptions;
+namespace AbdulkadirBak\LaravelCart\Exceptions;
 
 use Exception;
 use Illuminate\Http\Response;

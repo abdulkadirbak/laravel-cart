@@ -1,16 +1,16 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Logistics;
+namespace AbdulkadirBak\LaravelCart\Tests\Logistics;
 
-use Yab\ShoppingCart\Checkout;
-use Yab\ShoppingCart\Contracts\ShippingLogistics as ShippingLogisticsInterface;
+use AbdulkadirBak\LaravelCart\Checkout;
+use AbdulkadirBak\LaravelCart\Contracts\ShippingLogistics as ShippingLogisticsInterface;
 
 class ShippingLogistics implements ShippingLogisticsInterface
 {
     /**
      * Get the shipping cost given the checkout instance.
      *
-     * @param \Yab\ShoppingCart\Checkout $checkout
+     * @param \AbdulkadirBak\LaravelCart\Checkout $checkout
      *
      * @return float
      */

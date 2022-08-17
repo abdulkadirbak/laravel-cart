@@ -1,9 +1,9 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Logistics;
+namespace AbdulkadirBak\LaravelCart\Tests\Logistics;
 
-use Yab\ShoppingCart\Checkout;
-use Yab\ShoppingCart\Contracts\DiscountLogistics as DiscountLogisticsInterface;
+use AbdulkadirBak\LaravelCart\Checkout;
+use AbdulkadirBak\LaravelCart\Contracts\DiscountLogistics as DiscountLogisticsInterface;
 
 class DiscountLogistics implements DiscountLogisticsInterface
 {
@@ -14,7 +14,7 @@ class DiscountLogistics implements DiscountLogisticsInterface
      * Note: This should always return the **dollar amount** to discount
      * from the checkout, even if a percentage code is applied.
      *
-     * @param \Yab\ShoppingCart\Checkout $checkout
+     * @param \AbdulkadirBak\LaravelCart\Checkout $checkout
      * @param string $code
      *
      * @return float
@@ -24,7 +24,7 @@ class DiscountLogistics implements DiscountLogisticsInterface
         if ($code !== '50OFF') {
             return 0;
         }
-        
+
         return round($checkout->getSubtotal() * 0.5, 2);
     }
 }

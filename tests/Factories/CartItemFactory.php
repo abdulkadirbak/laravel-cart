@@ -1,10 +1,10 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Factories;
+namespace AbdulkadirBak\LaravelCart\Tests\Factories;
 
-use Yab\ShoppingCart\Models\Cart;
-use Yab\ShoppingCart\Models\CartItem;
-use Yab\ShoppingCart\Tests\Models\Product;
+use AbdulkadirBak\LaravelCart\Models\Cart;
+use AbdulkadirBak\LaravelCart\Models\CartItem;
+use AbdulkadirBak\LaravelCart\Tests\Models\Product;
 
 $factory->define(CartItem::class, function () {
     $product = factory(Product::class)->create([

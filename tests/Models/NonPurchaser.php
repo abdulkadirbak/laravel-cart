@@ -1,6 +1,6 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Models;
+namespace AbdulkadirBak\LaravelCart\Tests\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Factories;
+namespace AbdulkadirBak\LaravelCart\Tests\Factories;
 
-use Yab\ShoppingCart\Tests\Models\Customer;
+use AbdulkadirBak\LaravelCart\Tests\Models\Customer;
 
 $factory->define(Customer::class, function () {
     return [];

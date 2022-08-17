@@ -1,8 +1,8 @@
 <?php
 
-namespace Yab\ShoppingCart\Http\Requests;
+namespace AbdulkadirBak\LaravelCart\Http\Requests;
 
-use Yab\ShoppingCart\Http\Requests\APIRequest;
+use AbdulkadirBak\LaravelCart\Http\Requests\APIRequest;
 
 class CheckoutUpdateRequest extends APIRequest
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Yab\ShoppingCart\Http\Resources;
+namespace AbdulkadirBak\LaravelCart\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 

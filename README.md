@@ -30,7 +30,7 @@ composer require yabhq/laravel-cart
 The package publishes some migrations, routes (for optional use) and classes for further customizing your store logistics.
 
 ```bash
-php artisan vendor:publish --provider="Yab\ShoppingCart\ShoppingCartServiceProvider"
+php artisan vendor:publish --provider="AbdulkadirBak\LaravelCart\ShoppingCartServiceProvider"
 ```
 
 Full list of published files:
@@ -51,8 +51,8 @@ First, simply implement the _Purchaseable_ interface on your product (or other p
 **app/Models/Product.php**
 
 ```php
-use Yab\ShoppingCart\Traits\Purchaseable;
-use Yab\ShoppingCart\Contracts\Purchaseable as PurchaseableInterface;
+use AbdulkadirBak\LaravelCart\Traits\Purchaseable;
+use AbdulkadirBak\LaravelCart\Contracts\Purchaseable as PurchaseableInterface;
 
 class Product extends Model implements PurchaseableInterface
 {
@@ -65,8 +65,8 @@ Next we should implement the _Purchaser_ interface on the model representing the
 **app/Models/Customer.php**
 
 ```php
-use Yab\ShoppingCart\Traits\Purchaser;
-use Yab\ShoppingCart\Contracts\Purchaser as PurchaserInterface;
+use AbdulkadirBak\LaravelCart\Traits\Purchaser;
+use AbdulkadirBak\LaravelCart\Contracts\Purchaser as PurchaserInterface;
 
 class Customer extends Model implements PurchaserInterface
 {
@@ -89,7 +89,7 @@ Route::group(['middleware' => ['example']], function () {
 The package comes with a _Checkout_ class which allows you to interact with the shopping cart.
 
 ```php
-use Yab\ShoppingCart\Checkout;
+use AbdulkadirBak\LaravelCart\Checkout;
 ```
 
 Creating or retrieving a checkout instance:
@@ -121,7 +121,7 @@ $checkout->destroy();
 Interacting with the underlying cart model and query builder:
 
 ```php
-// Yab\ShoppingCart\Models\Cart
+// AbdulkadirBak\LaravelCart\Models\Cart
 $checkout->getCart();
 
 // Illuminate\Database\Eloquent\Builder

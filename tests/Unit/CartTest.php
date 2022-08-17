@@ -1,9 +1,9 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Unit;
+namespace AbdulkadirBak\LaravelCart\Tests\Unit;
 
-use Yab\ShoppingCart\Models\Cart;
-use Yab\ShoppingCart\Tests\TestCase;
+use AbdulkadirBak\LaravelCart\Models\Cart;
+use AbdulkadirBak\LaravelCart\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CartTest extends TestCase
@@ -19,7 +19,7 @@ class CartTest extends TestCase
             'id' => $cart->id
         ]);
     }
-    
+
     /** @test */
     public function a_cart_can_be_soft_deleted()
     {

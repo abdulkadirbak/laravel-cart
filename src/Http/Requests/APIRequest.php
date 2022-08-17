@@ -1,6 +1,6 @@
 <?php
 
-namespace Yab\ShoppingCart\Http\Requests;
+namespace AbdulkadirBak\LaravelCart\Http\Requests;
 
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;

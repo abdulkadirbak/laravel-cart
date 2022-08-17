@@ -1,9 +1,9 @@
 <?php
 
-namespace Yab\ShoppingCart;
+namespace AbdulkadirBak\LaravelCart;
 
 use Illuminate\Support\ServiceProvider;
-use Yab\ShoppingCart\Http\Resources\CheckoutResource;
+use AbdulkadirBak\LaravelCart\Http\Resources\CheckoutResource;
 
 class ShoppingCartServiceProvider extends ServiceProvider
 {

@@ -1,17 +1,17 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Logistics;
+namespace AbdulkadirBak\LaravelCart\Tests\Logistics;
 
-use Yab\ShoppingCart\Checkout;
-use Yab\ShoppingCart\Tests\Logistics\CartLogistics;
-use Yab\ShoppingCart\Contracts\CartLogistics as CartLogisticsInterface;
+use AbdulkadirBak\LaravelCart\Checkout;
+use AbdulkadirBak\LaravelCart\Tests\Logistics\CartLogistics;
+use AbdulkadirBak\LaravelCart\Contracts\CartLogistics as CartLogisticsInterface;
 
 class CartLogisticsMissingTotals extends CartLogistics implements CartLogisticsInterface
 {
     /**
      * Determines if a checkout has all the information required to complete checkout.
      *
-     * @param \Yab\ShoppingCart\Checkout $checkout
+     * @param \AbdulkadirBak\LaravelCart\Checkout $checkout
      *
      * @return bool
      */

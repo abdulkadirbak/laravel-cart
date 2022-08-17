@@ -1,31 +1,31 @@
 <?php
 
-namespace Yab\ShoppingCart;
+namespace AbdulkadirBak\LaravelCart;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use App\Logistics\TaxLogistics;
 use App\Logistics\CartLogistics;
-use Yab\ShoppingCart\Models\Cart;
+use AbdulkadirBak\LaravelCart\Models\Cart;
 use App\Logistics\DiscountLogistics;
 use App\Logistics\ShippingLogistics;
-use Yab\ShoppingCart\Models\CartItem;
+use AbdulkadirBak\LaravelCart\Models\CartItem;
 use Illuminate\Database\Eloquent\Builder;
-use Yab\ShoppingCart\Contracts\Purchaser;
-use Yab\ShoppingCart\Events\CartItemAdded;
-use Yab\ShoppingCart\Contracts\Purchaseable;
-use Yab\ShoppingCart\Events\CartItemDeleted;
-use Yab\ShoppingCart\Events\CartItemUpdated;
-use Yab\ShoppingCart\Exceptions\CheckoutNotFoundException;
-use Yab\ShoppingCart\Exceptions\PurchaserInvalidException;
-use Yab\ShoppingCart\Exceptions\ItemNotPurchaseableException;
+use AbdulkadirBak\LaravelCart\Contracts\Purchaser;
+use AbdulkadirBak\LaravelCart\Events\CartItemAdded;
+use AbdulkadirBak\LaravelCart\Contracts\Purchaseable;
+use AbdulkadirBak\LaravelCart\Events\CartItemDeleted;
+use AbdulkadirBak\LaravelCart\Events\CartItemUpdated;
+use AbdulkadirBak\LaravelCart\Exceptions\CheckoutNotFoundException;
+use AbdulkadirBak\LaravelCart\Exceptions\PurchaserInvalidException;
+use AbdulkadirBak\LaravelCart\Exceptions\ItemNotPurchaseableException;
 
 class Checkout
 {
     /**
      * Create a new checkout instance for a cart.
      *
-     * @param \Yab\ShoppingCart\Models\Cart
+     * @param \AbdulkadirBak\LaravelCart\Models\Cart
      */
     public function __construct(protected Cart $cart)
     {
@@ -37,7 +37,7 @@ class Checkout
      * @param string $checkoutId
      * @param bool $withTrashed
      *
-     * @return \Yab\ShoppingCart\Checkout
+     * @return \AbdulkadirBak\LaravelCart\Checkout
      */
     public static function findById(string $checkoutId, bool $withTrashed = false) : Checkout
     {
@@ -53,7 +53,7 @@ class Checkout
     /**
      * Create a fresh new checkout with a new ID.
      *
-     * @return \Yab\ShoppingCart\Checkout
+     * @return \AbdulkadirBak\LaravelCart\Checkout
      */
     public static function create() : Checkout
     {
@@ -85,7 +85,7 @@ class Checkout
     /**
      * Get the underlying cart model for this checkout instance.
      *
-     * @return \Yab\ShoppingCart\Models\Cart
+     * @return \AbdulkadirBak\LaravelCart\Models\Cart
      */
     public function getCart() : Cart
     {
@@ -150,17 +150,17 @@ class Checkout
      * @param float $price - optional
      * @param array $options - optional
      *
-     * @return \Yab\ShoppingCart\Models\CartItem
+     * @return \AbdulkadirBak\LaravelCart\Models\CartItem
      */
     public function addItem(mixed $purchaseable, int $qty, ?float $price = null, ?array $options = []) : CartItem
     {
         $this->abortIfNotPurchaseable($purchaseable);
-        
+
         app(CartLogistics::class)->beforeCartItemAdded($this, $purchaseable, $qty);
 
         $item = $this->cart->getItem($purchaseable);
         $item->setQty($qty)->setOptions($options)->calculatePrice($price)->save();
-        
+
         event(new CartItemAdded($item));
 
         return $item;
@@ -174,13 +174,13 @@ class Checkout
      * @param float $price - optional
      * @param array $options - optional
      *
-     * @return \Yab\ShoppingCart\Models\CartItem
+     * @return \AbdulkadirBak\LaravelCart\Models\CartItem
      */
     public function updateItem(int $cartItemId, int $qty, ?float $price = null, ?array $options = []) : CartItem
     {
         $item = CartItem::findOrFail($cartItemId);
         $item->setQty($qty)->setOptions($options)->calculatePrice($price)->save();
-        
+
         event(new CartItemUpdated($item));
 
         return $item;
@@ -191,13 +191,13 @@ class Checkout
      *
      * @param int $cartItemId
      *
-     * @return \Yab\ShoppingCart\Models\CartItem
+     * @return \AbdulkadirBak\LaravelCart\Models\CartItem
      */
     public function removeItem(int $cartItemId) : CartItem
     {
         $item = CartItem::findOrFail($cartItemId);
         $item->delete();
-        
+
         event(new CartItemDeleted($item));
 
         return $item;
@@ -209,7 +209,7 @@ class Checkout
      * @param string $key
      * @param mixed $payload
      *
-     * @return \Yab\ShoppingCart\Checkout
+     * @return \AbdulkadirBak\LaravelCart\Checkout
      */
     public function setCustomField(string $key, mixed $payload) : Checkout
     {
@@ -244,7 +244,7 @@ class Checkout
      *
      * @param string $code
      *
-     * @return \Yab\ShoppingCart\Checkout
+     * @return \AbdulkadirBak\LaravelCart\Checkout
      */
     public function applyDiscountCode(string $code) : Checkout
     {
@@ -266,7 +266,7 @@ class Checkout
      *
      * @param float $amount
      *
-     * @return \Yab\ShoppingCart\Checkout
+     * @return \AbdulkadirBak\LaravelCart\Checkout
      */
     public function setDiscountAmount(float $amount) : Checkout
     {
@@ -341,7 +341,7 @@ class Checkout
      *
      * @param string $code
      *
-     * @return \Yab\ShoppingCart\Checkout
+     * @return \AbdulkadirBak\LaravelCart\Checkout
      */
     private function setDiscountCode(string $code) : Checkout
     {
@@ -357,7 +357,7 @@ class Checkout
      *
      * @param mixed $purchaseable
      *
-     * @throws \Yab\ShoppingCart\Exceptions\ItemNotPurchaseableException
+     * @throws \AbdulkadirBak\LaravelCart\Exceptions\ItemNotPurchaseableException
      *
      * @return void
      */
@@ -374,7 +374,7 @@ class Checkout
      *
      * @param mixed $purchaser
      *
-     * @throws \Yab\ShoppingCart\Exceptions\PurchaserInvalidException
+     * @throws \AbdulkadirBak\LaravelCart\Exceptions\PurchaserInvalidException
      *
      * @return void
      */

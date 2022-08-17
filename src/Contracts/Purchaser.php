@@ -1,6 +1,6 @@
 <?php
 
-namespace Yab\ShoppingCart\Contracts;
+namespace AbdulkadirBak\LaravelCart\Contracts;
 
 interface Purchaser
 {

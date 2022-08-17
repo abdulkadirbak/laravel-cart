@@ -1,16 +1,16 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests;
+namespace AbdulkadirBak\LaravelCart\Tests;
 
 use App\Logistics\TaxLogistics;
 use App\Logistics\CartLogistics;
 use App\Logistics\DiscountLogistics;
 use App\Logistics\ShippingLogistics;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Yab\ShoppingCart\Tests\Logistics\TaxLogistics as TaxLogisticsTest;
-use Yab\ShoppingCart\Tests\Logistics\CartLogistics as CartLogisticsTest;
-use Yab\ShoppingCart\Tests\Logistics\DiscountLogistics as DiscountLogisticsTest;
-use Yab\ShoppingCart\Tests\Logistics\ShippingLogistics as ShippingLogisticsTest;
+use AbdulkadirBak\LaravelCart\Tests\Logistics\TaxLogistics as TaxLogisticsTest;
+use AbdulkadirBak\LaravelCart\Tests\Logistics\CartLogistics as CartLogisticsTest;
+use AbdulkadirBak\LaravelCart\Tests\Logistics\DiscountLogistics as DiscountLogisticsTest;
+use AbdulkadirBak\LaravelCart\Tests\Logistics\ShippingLogistics as ShippingLogisticsTest;
 
 abstract class TestCase extends OrchestraTestCase
 {
@@ -43,8 +43,8 @@ abstract class TestCase extends OrchestraTestCase
     protected function getPackageProviders($app)
     {
         return [
-            'Yab\ShoppingCart\ShoppingCartServiceProvider',
-            'Yab\ShoppingCart\Tests\ShoppingCartTestProvider',
+            'AbdulkadirBak\LaravelCart\ShoppingCartServiceProvider',
+            'AbdulkadirBak\LaravelCart\Tests\ShoppingCartTestProvider',
         ];
     }
 }

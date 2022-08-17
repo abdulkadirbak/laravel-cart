@@ -1,12 +1,12 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Models;
+namespace AbdulkadirBak\LaravelCart\Tests\Models;
 
 use Yab\Mint\Casts\Money;
 use Illuminate\Database\Eloquent\Model;
-use Yab\ShoppingCart\Traits\Purchaseable;
+use AbdulkadirBak\LaravelCart\Traits\Purchaseable;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Yab\ShoppingCart\Contracts\Purchaseable as PurchaseableInterface;
+use AbdulkadirBak\LaravelCart\Contracts\Purchaseable as PurchaseableInterface;
 
 class Product extends Model implements PurchaseableInterface
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Factories;
+namespace AbdulkadirBak\LaravelCart\Tests\Factories;
 
-use Yab\ShoppingCart\Tests\Models\NonPurchaseable;
+use AbdulkadirBak\LaravelCart\Tests\Models\NonPurchaseable;
 
 $factory->define(NonPurchaseable::class, function () {
     return [

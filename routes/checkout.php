@@ -5,7 +5,7 @@ use App\Http\Controllers\Checkout\CheckoutItemController;
 use App\Http\Controllers\Checkout\CheckoutDiscountController;
 
 Route::group([
-    'namespace' => 'Yab\ShoppingCart\Http\Controllers\Checkout',
+    'namespace' => 'AbdulkadirBak\LaravelCart\Http\Controllers\Checkout',
 ], function () {
     Route::post('checkout', [CheckoutController::class, 'store'])->name('checkout.store');
     Route::get('checkout/{checkout}', [CheckoutController::class, 'show'])->name('checkout.show');

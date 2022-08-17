@@ -1,8 +1,8 @@
 <?php
 
-namespace Yab\ShoppingCart\Contracts;
+namespace AbdulkadirBak\LaravelCart\Contracts;
 
-use Yab\ShoppingCart\Checkout;
+use AbdulkadirBak\LaravelCart\Checkout;
 
 interface CartLogistics
 {

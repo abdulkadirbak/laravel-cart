@@ -1,8 +1,8 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Factories;
+namespace AbdulkadirBak\LaravelCart\Tests\Factories;
 
-use Yab\ShoppingCart\Tests\Models\Product;
+use AbdulkadirBak\LaravelCart\Tests\Models\Product;
 
 $factory->define(Product::class, function () {
     return [

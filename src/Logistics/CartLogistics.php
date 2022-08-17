@@ -2,8 +2,8 @@
 
 namespace App\Logistics;
 
-use Yab\ShoppingCart\Checkout;
-use Yab\ShoppingCart\Contracts\CartLogistics as CartLogisticsInterface;
+use AbdulkadirBak\LaravelCart\Checkout;
+use AbdulkadirBak\LaravelCart\Contracts\CartLogistics as CartLogisticsInterface;
 
 class CartLogistics implements CartLogisticsInterface
 {
@@ -23,7 +23,7 @@ class CartLogistics implements CartLogisticsInterface
     /**
      * Logic which fires immediately prior to an item being added to cart.
      *
-     * @param \Yab\ShoppingCart\Checkout $checkout
+     * @param \AbdulkadirBak\LaravelCart\Checkout $checkout
      * @param mixed $purchaseable
      * @param int $qty
      *
@@ -36,7 +36,7 @@ class CartLogistics implements CartLogisticsInterface
     /**
      * Determines if a checkout has all the information required to complete checkout.
      *
-     * @param \Yab\ShoppingCart\Checkout $checkout
+     * @param \AbdulkadirBak\LaravelCart\Checkout $checkout
      *
      * @return bool
      */

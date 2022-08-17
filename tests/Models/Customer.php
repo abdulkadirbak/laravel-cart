@@ -1,11 +1,11 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Models;
+namespace AbdulkadirBak\LaravelCart\Tests\Models;
 
-use Yab\ShoppingCart\Traits\Purchaser;
+use AbdulkadirBak\LaravelCart\Traits\Purchaser;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Yab\ShoppingCart\Contracts\Purchaser as PurchaserInterface;
+use AbdulkadirBak\LaravelCart\Contracts\Purchaser as PurchaserInterface;
 
 class Customer extends Model implements PurchaserInterface
 {

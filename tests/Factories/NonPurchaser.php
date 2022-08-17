@@ -1,8 +1,8 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Factories;
+namespace AbdulkadirBak\LaravelCart\Tests\Factories;
 
-use Yab\ShoppingCart\Tests\Models\NonPurchaser;
+use AbdulkadirBak\LaravelCart\Tests\Models\NonPurchaser;
 
 $factory->define(NonPurchaser::class, function () {
     return [];

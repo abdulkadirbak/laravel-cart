@@ -1,18 +1,18 @@
 <?php
 
-namespace Yab\ShoppingCart\Http\Controllers\Checkout;
+namespace AbdulkadirBak\LaravelCart\Http\Controllers\Checkout;
 
-use Yab\ShoppingCart\Checkout;
-use Yab\ShoppingCart\Http\Controllers\Controller;
-use Yab\ShoppingCart\Http\Resources\CheckoutResource;
-use Yab\ShoppingCart\Http\Requests\CheckoutDiscountRequest;
+use AbdulkadirBak\LaravelCart\Checkout;
+use AbdulkadirBak\LaravelCart\Http\Controllers\Controller;
+use AbdulkadirBak\LaravelCart\Http\Resources\CheckoutResource;
+use AbdulkadirBak\LaravelCart\Http\Requests\CheckoutDiscountRequest;
 
 class CheckoutDiscountController extends Controller
 {
     /**
      * Apply a discount code to a checkout.
      *
-     * @param  \Yab\ShoppingCart\Http\Requests\CheckoutDiscountRequest  $request
+     * @param  \AbdulkadirBak\LaravelCart\Http\Requests\CheckoutDiscountRequest  $request
      * @param  string $checkoutId
      *
      * @return \Illuminate\Http\Response

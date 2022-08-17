@@ -1,20 +1,20 @@
 <?php
 
-namespace Yab\ShoppingCart\Http\Controllers\Checkout;
+namespace AbdulkadirBak\LaravelCart\Http\Controllers\Checkout;
 
 use Illuminate\Http\Request;
-use Yab\ShoppingCart\Checkout;
-use Yab\ShoppingCart\Http\Controllers\Controller;
-use Yab\ShoppingCart\Http\Requests\CheckoutItemCreateRequest;
-use Yab\ShoppingCart\Http\Requests\CheckoutItemUpdateRequest;
-use Yab\ShoppingCart\Exceptions\PurchaseableNotFoundException;
+use AbdulkadirBak\LaravelCart\Checkout;
+use AbdulkadirBak\LaravelCart\Http\Controllers\Controller;
+use AbdulkadirBak\LaravelCart\Http\Requests\CheckoutItemCreateRequest;
+use AbdulkadirBak\LaravelCart\Http\Requests\CheckoutItemUpdateRequest;
+use AbdulkadirBak\LaravelCart\Exceptions\PurchaseableNotFoundException;
 
 class CheckoutItemController extends Controller
 {
     /**
      * Create a new item in the cart.
      *
-     * @param \Yab\ShoppingCart\Http\Requests\CheckoutItemCreateRequest  $request
+     * @param \AbdulkadirBak\LaravelCart\Http\Requests\CheckoutItemCreateRequest  $request
      * @param string $checkoutId
      *
      * @return \Illuminate\Http\Response
@@ -40,7 +40,7 @@ class CheckoutItemController extends Controller
     /**
      * Update an existing item in the cart.
      *
-     * @param \Yab\ShoppingCart\Http\Requests\CheckoutItemUpdateRequest  $request
+     * @param \AbdulkadirBak\LaravelCart\Http\Requests\CheckoutItemUpdateRequest  $request
      * @param string $checkoutId
      * @param int $itemId
      *

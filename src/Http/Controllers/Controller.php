@@ -1,6 +1,6 @@
 <?php
 
-namespace Yab\ShoppingCart\Http\Controllers;
+namespace AbdulkadirBak\LaravelCart\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

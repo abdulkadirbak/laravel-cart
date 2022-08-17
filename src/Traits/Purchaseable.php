@@ -1,6 +1,6 @@
 <?php
 
-namespace Yab\ShoppingCart\Traits;
+namespace AbdulkadirBak\LaravelCart\Traits;
 
 trait Purchaseable
 {

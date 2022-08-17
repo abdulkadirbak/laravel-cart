@@ -1,8 +1,8 @@
 <?php
 
-namespace Yab\ShoppingCart\Events;
+namespace AbdulkadirBak\LaravelCart\Events;
 
-use Yab\ShoppingCart\Models\CartItem;
+use AbdulkadirBak\LaravelCart\Models\CartItem;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -15,7 +15,7 @@ class CartItemUpdated
     /**
      * Create a new event instance.
      *
-     * @param \Yab\ShoppingCart\Models\CartItem $item
+     * @param \AbdulkadirBak\LaravelCart\Models\CartItem $item
      *
      * @return void
      */

@@ -1,16 +1,16 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests\Logistics;
+namespace AbdulkadirBak\LaravelCart\Tests\Logistics;
 
-use Yab\ShoppingCart\Checkout;
-use Yab\ShoppingCart\Contracts\TaxLogistics as TaxLogisticsInterface;
+use AbdulkadirBak\LaravelCart\Checkout;
+use AbdulkadirBak\LaravelCart\Contracts\TaxLogistics as TaxLogisticsInterface;
 
 class TaxLogistics implements TaxLogisticsInterface
 {
     /**
      * Get the taxes given the checkout instance.
      *
-     * @param \Yab\ShoppingCart\Checkout $checkout
+     * @param \AbdulkadirBak\LaravelCart\Checkout $checkout
      *
      * @return float
      */

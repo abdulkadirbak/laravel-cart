@@ -1,6 +1,6 @@
 <?php
 
-namespace Yab\ShoppingCart\Tests;
+namespace AbdulkadirBak\LaravelCart\Tests;
 
 use Illuminate\Support\ServiceProvider;
 

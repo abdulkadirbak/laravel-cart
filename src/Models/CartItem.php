@@ -1,9 +1,9 @@
 <?php
 
-namespace Yab\ShoppingCart\Models;
+namespace AbdulkadirBak\LaravelCart\Models;
 
 use Yab\Mint\Casts\Money;
-use Yab\ShoppingCart\Models\Cart;
+use AbdulkadirBak\LaravelCart\Models\Cart;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class CartItem extends Model
 {
     use SoftDeletes;
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -62,7 +62,7 @@ class CartItem extends Model
      *
      * @param integer $qty
      *
-     * @return \Yab\ShoppingCart\Models\CartItem
+     * @return \AbdulkadirBak\LaravelCart\Models\CartItem
      */
     public function setQty(int $qty) : CartItem
     {
@@ -76,7 +76,7 @@ class CartItem extends Model
      *
      * @param array $options
      *
-     * @return \Yab\ShoppingCart\Models\CartItem
+     * @return \AbdulkadirBak\LaravelCart\Models\CartItem
      */
     public function setOptions(array $options) : CartItem
     {
@@ -93,14 +93,14 @@ class CartItem extends Model
      *
      * @param float|null $unitPrice
      *
-     * @return \Yab\ShoppingCart\Models\CartItem
+     * @return \AbdulkadirBak\LaravelCart\Models\CartItem
      */
     public function calculatePrice(float|null $unitPrice = null) : CartItem
     {
         if (is_null($unitPrice)) {
             $unitPrice = $this->purchaseable->getRetailPrice();
         }
-        
+
         $this->unit_price = $unitPrice;
         $this->price = $unitPrice * $this->qty;
 
