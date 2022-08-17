@@ -1,6 +1,3 @@
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/yabhq/laravel-cart.svg?style=flat-square)](https://packagist.org/packages/yabhq/laravel-cart)
-[![CircleCI](https://circleci.com/gh/yabhq/laravel-cart.svg?style=svg)](https://circleci.com/gh/yabhq/laravel-cart)
-
 # Laravel Shopping Cart
 
 A simple yet customizable Laravel shopping cart implementation.
@@ -23,9 +20,11 @@ Provides RESTful API endpoints out of the box to help with front-end / SPA integ
 
 ## Installation
 
-```bash
-composer require yabhq/laravel-cart
-```
+[//]: # (```bash)
+
+[//]: # (composer require yabhq/laravel-cart)
+
+[//]: # (```)
 
 The package publishes some migrations, routes (for optional use) and classes for further customizing your store logistics.
 
